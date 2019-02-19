@@ -37,19 +37,19 @@ public class CityPlanBuilder {
 		BuildingPlan buildingplan = null;
 		String lines;
 		String[] strs;
-		String bp_type;
+		char bp_type;
 		int rows, columns, capacity, type;
 		
 		lines = br.readLine();
 		strs = lines.trim().split("\\s+");
-		bp_type = strs[0];
+		bp_type = strs[0].charAt(0);
 		rows = Integer.parseInt(strs[1]);
 		columns = Integer.parseInt(strs[2]);
-		if (bp_type == "R") {
+		if (bp_type == 'R') {
 			capacity = Integer.parseInt(strs[3]);
 			buildingplan = new Residential(id, rows, columns, capacity);
 		}
-		else if (bp_type == "U") {
+		else if (bp_type == 'U') {
 			type = Integer.parseInt(strs[3]);
 			buildingplan = new Utility(id, rows, columns, type);
 		}

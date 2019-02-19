@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class CityPlan {
@@ -11,6 +12,8 @@ public class CityPlan {
 		this.rows = rows;
 		this.columns = columns;
 		this.max_wd = max_wd;
+		
+		buildingPlans = new ArrayList<BuildingPlan>();
 	}
 
 	// Add building to city plan. Throws exception if another building 
