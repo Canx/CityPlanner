@@ -1,8 +1,13 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CityPlanBuilder {
+	
+	
+	
 	public static void main(String args[]) throws Exception {
 		BufferedReader br;
 		int rows, columns, max_wd, total_bp;
@@ -26,11 +31,24 @@ public class CityPlanBuilder {
 		CityPlan cityplan;
 		cityplan = new CityPlan(rows, columns, max_wd);
 		
+		List<BuildingPlan> bp = new ArrayList<>();
 		for (int curr_bp = 1; curr_bp <= total_bp; curr_bp++) {
-			cityplan.add(BuildingPlanBuilder(curr_bp, br));
+			bp.add(BuildingPlanBuilder(curr_bp, br));
 		}
 		
 		br.close();
+		
+		// Print before
+		System.out.println(cityplan);
+		
+		// Set building plan
+		cityplan.set(0,0,bp.get(0));
+		
+		// Print after
+	    System.out.println(cityplan);
+				
+		
+		
 	}
 	
 	public static BuildingPlan BuildingPlanBuilder(int id, BufferedReader br) throws Exception {

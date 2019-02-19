@@ -1,9 +1,9 @@
 
 public class BuildingPlan {
-	private int id;
-	private int rows;
-	private int columns;
-	private char[][] map;
+	public int id;
+	public int rows;
+	public int columns;
+	public char[][] map;
 	
 	
 	public BuildingPlan(int id, int rows, int columns) {
